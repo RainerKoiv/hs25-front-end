@@ -133,7 +133,7 @@ async function handleFormSubmit(event) {
         const raamatuId = document.getElementById("raamatu_id2").value;
 
         try {
-            const url = `hs25-raamatute-otsing-a3g7ghbydccqaeam.northeurope-01.azurewebsites.net/raamatu_otsing/${raamatuId}`;
+            const url = `https://hs25-raamatute-otsing-a3g7ghbydccqaeam.northeurope-01.azurewebsites.net/raamatu_otsing/${raamatuId}`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -164,15 +164,15 @@ async function handleFormSubmit(event) {
 
 
 async function listiraamatud() {
-    const responseData = await getDataAsJson("hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/");
+    const responseData = await getDataAsJson("https://hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/");
     const resultElement = document.getElementById("raamatud_result");
     resultElement.innerHTML = ""
     for (var raamat of responseData.raamatud){
         raamat = raamat.split(".")[0]
         resultElement.innerHTML +=
             '<div id="raamat-' + raamat + '"> ' +
-            '<a href="hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/'+raamat+'"  download="'+raamat+'.txt" >' +raamat+".txt</a> " +
-            '<a href="#" onclick="deleteObject(\'hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/'+raamat+'\')" > [kustuta]</a>' +
+            '<a href="https://hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/'+raamat+'"  download="'+raamat+'.txt" >' +raamat+".txt</a> " +
+            '<a href="#" onclick="deleteObject(\'https://hs25-raamatud-fnegb9fthdafe5cj.northeurope-01.azurewebsites.net/raamatud/'+raamat+'\')" > [kustuta]</a>' +
 
             "<br />";
     }
