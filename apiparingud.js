@@ -133,7 +133,7 @@ async function handleFormSubmit(event) {
         const raamatuId = document.getElementById("raamatu_id2").value;
 
         try {
-            const url = `https://hs25-raamatute-otsing-a3g7ghbydccqaeam.northeurope-01.azurewebsites.net/raamatu_otsing/${raamatuId}`;
+            const url = `https://hs25-raamatu-otsing-g3h9djfhgzd8hfgn.northeurope-01.azurewebsites.net/raamatu_otsing/${raamatuId}`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
